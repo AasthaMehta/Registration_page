@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    
+</head>
+<body>
+    <div>
+        <h1>
+            Student Updation
+        </h1>
+        <form action="/edit/<%= student._id %>" method="post">
+    
+        <label for="studentStudentId">Student ID</label>
+        <input name="studentStudentId" placeholder="Enter your ID" value="<%= student.StudentId %>">
+        <br>
+        <br>
+        <label for="studentName">Student Name</label>
+        <input name="studentName" placeholder="Write your name" value="<%= student.Name %>">
+        <br>
+        <br>
+        <label for="studentQualification">Qualifications</label>
+        <select id="studentQualification" name="studentQualification">
+          <option value="Btech" <%= student.Qualification === 'Btech' ? 'selected' : '' %>>Btech</option>
+          <option value="Mtech" <%= student.Qualification === 'Mtech' ? 'selected' : '' %>>Mtech</option>
+          <option value="Ph.d" <%= student.Qualification === 'Ph.d' ? 'selected' : '' %>>Ph.d</option>
+        </select>
+        <br>
+        <br>
+        <label for="studentCollege">College</label>
+        <select id="studentCollege" name="studentCollege">
+          <option value="NGIT" <%= student.College === 'NGIT' ? 'selected' : '' %>>NGIT</option>
+          <option value="KMIT" <%= student.College === 'KMIT' ? 'selected' : '' %>>KMIT</option>
+          <option value="KMEC" <%= student.College === 'KMEC' ? 'selected' : '' %>>KMEC</option>
+        </select>
+        <br>
+        <br>
+         <label for="studentGender">Gender</label>
+         <br>
+         <div>
+             <input type="radio" id="male" name="studentGender" value="Male" <%= student.Gender === 'Male' ? 'checked' : '' %>>
+             <label for="male">MALE</label>
+             <input type="radio" id="female" name="studentGender" value="Female" <%= student.Gender === 'Female' ? 'checked' : '' %>>
+             <label for="female">FEMALE</label>
+             <input type="radio" id="other" name="studentGender" value="Others" <%= student.Gender === 'Others' ? 'checked' : '' %>>
+             <label for="other">Others</label>
+         </div>
+         <br>
+         <br>
+    
+        <label for="studentIdea">Idea Statement</label><br>
+        <p></p>
+        <textarea name="studentIdea" placeholder="Write your idea"><%= student.Idea %></textarea>
+        <br>
+        <br>
+        <label for="studentEstBudget">EstBudget</label>
+        <select name="studentEstBudget">
+            <option value="1,000-25,000" <%= student.EstBudget === '1,000-25,000' ? 'selected' : '' %>>1,000-25,000</option>
+            <option value="25,000-50,000" <%= student.EstBudget === '25,000-50,000' ? 'selected' : '' %>>25,000-50,000</option>
+            <option value="50,000-75,000" <%= student.EstBudget === '50,000-75,000' ? 'selected' : '' %>>50,000-75,000</option>
+            <option value="75,000-1 lakh" <%= student.EstBudget === '75,000-1 lakh' ? 'selected' : '' %>>75,000-1 lakh</option>
+            <option value="Above 1 Lakh" <%= student.EstBudget === 'Above 1 Lakh' ? 'selected' : '' %>>Above 1 Lakh</option>
+        </select>
+        <br>
+        <br>
+    
+        <button type="submit">Submit</button>
+    
+        </form>
+    </div>
+</body>
+</html>
+<!-- --------------------------------------------------------------------------- -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+</head>
+<body>
+    <div>
+        <h1>
+            Student updation
+        </h1>
+        <form action="/edit/<%= student._id %>" method="post">
+    
+        <label for="studentStudentId">Student ID</label>
+        <input name="studentStudentId" placeholder="enter your id" value="<%= student.StudentId%>">
+        <br>
+        <br>
+        <label for="studentName">Student Name</label>
+        <input name="studentName" placeholder="Write your name" value="<%= student.Name%>">
+        <br>
+        <br>
+        <label for="studentQualification">Qualifications</label>
+        <select id="studentQualification" name="studentQualification" value="<%= student.Qualification%>">
+          <option value="b.tech">b.tech</option>
+          <option value="m.tech">m.tech</option>
+          <option value="phd">Ph.d</option>
+        </select>
+        <br>
+        <br>
+        <label for="studentCollege">College</label>
+        <select id="studentCollege" name="studentcollege" value="<%= student.College%>">
+          <option value="ngit">NGIT</option>
+          <option value="kmit">KMIT</option>
+          <option value="kmec">KMEC</option>
+        </select>
+        <br>
+        <br>
+         <label for="studentGender">Gender</label>
+         <br>
+         <div>
+             <input type="radio" id="male" name="studentGender" value="male "<%= student.Gender%>">
+             <label for="male">MALE</label>
+             <input type="radio" id="female" name="studentGender" value="female"<%= student.Gender%>">
+             <label for="female">FEMALE</label>
+         <input type="radio" id="other" name="studentGender" value="other"<%= student.Gender%>">
+         <label for="other">Others</label>
+         </div>
+         <br>
+         <br>
+    
+        <label for="studentIdea">idea statement</label><br>
+        <p></p>
+        <textarea name="studentIdea" placeholder="Write your idea" value="<%= student.Idea%>" ></textarea>
+        <br>
+        <br>
+        <label for="studentEstBudget">EstBudget</label>
+        <select name="studentEstBudget" placeholder="Your budget.." value="<%= student.EstBudget%>"><option>1,000-25,000</option><option>25,000-50,000</option><option>50,000-75,000</option><option>75,000-1 lakh</option><option>Above 1 Lakh</option></select>
+        <br>
+        <br>
+    
+        <button type="submit">submit</button>
+    
+        
+        </form>
+    </div>
+</body>
+</html> 

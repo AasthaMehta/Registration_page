@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title>signup page</title>
+        </meta>
+        <style>
+            p{
+    font-size: x-small;
+}
+body{
+    margin:0;
+    padding: auto;
+    font-family:sans-serif;
+    background-image: url("https://www.printawallpaper.com/wp-content/uploads/2020/07/big_idea_detail-768x512.jpg");
+    background-size:auto;
+    background-position: center;
+}
+.container{
+    width:400px;
+    box-shadow:5px;
+    background:rgb(243, 247, 217);
+    padding: 20px;
+    margin: 5% auto 0;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+h2{
+    text-align: center;
+    color:rgb(0, 0, 0);
+}
+h1{
+    padding: 20%;
+    text-align: center;
+}
+a{
+    margin-left: 75%;
+    background:none;
+    padding: 10px;
+    color: rgb(255, 250, 250);
+}
+.table{
+    box-shadow: 5px;
+    background-color: rgb(246, 240, 233);
+    width: 700px;
+    box-shadow:px;
+    padding: 30px;
+    margin: 5% auto 0;
+    text-align: center;
+    color: black;
+    border: 10px;
+}
+table,th,td{ 
+    border: 1px solid rgb(30, 28, 28);
+    border-collapse: collapse;
+    font-size: small;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 2%;  
+}
+h5{
+    text-align: center;
+    background:none;
+    color: rgb(255, 250, 250);
+}
+</style>
+    </head>
+    <body>
+        <div class="container">
+        <h2>Student Registrations</h2>
+       <form action="/details" method="post">
+                <label type="text">Student ID</label>&emsp;
+                <input type="text" name="studentStudentId" placeholder="write your student id" ><br><br>
+
+                <label type="text">Student Name</label>&emsp;
+                <input type="text" placeholder="write your name here" maxlength="15" name="studentName">
+                <p>(Maximum limit 15 characters)</p>
+
+                <label type="option">Qualifications</label>
+                <select name="studentQualification"><option>Btech</option><option>Mtech</option><option>Ph.d</option></select><br><br>
+
+                 <label type="option">College</label>&emsp;
+                 <select name="studentCollege"><option>KMIT</option><option>NGIT</option><option>KMEC</option></select><br><br>
+
+                <label type="option">Gender</label>&emsp;
+                <input type="radio" name="studentGender" value="Male"> 
+                <label>Male</label><input type="radio" name="studentGender" value="Female">
+                <label>Female</label><input type="radio" name="studentGender" value="Others">
+                <label>Others</label><br><br>
+
+                <label type="text">Idea statement</label>&emsp;
+                <textarea rows="5" cols="45" name="studentIdea"></textarea>
+
+                <label type="text">EstBudget</label>
+                <select name="studentEstBudget"><option>1,000-25,000</option><option>25,000-50,000</option><option>50,000-75,000</option><option>75,000-1 lakh</option><option>Above 1 Lakh</option></select><br><br>
+
+                <button type="submit">submit</button>
+         </form>
+        
+        </div>
+    </body
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+    <link  href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" rel="stylesheet"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+  <style>
+    #button{
+        margin-left:45%;
+        background-color: black;
+        color:aliceblue;
+        margin-top: 2.5%; 
+    }
+  </style>
+</head>
+    <body>
+        <div class="box">
+            <form action="/signup" method="post">   
+            <button>Register!</button>
+            </form>
+            <br>
+            <br>
+            <form action="/" method="post">
+            <table id="table" class="table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th scope="col">Student ID</th>
+                            <th scope="col">Student Name</th>
+                            <th scope="col">Qualifications</th>
+                            <th scope="col">College</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Idea statement</th>
+                            <th scope="col">EstBudget</th>
+                            <th scope="col">Delete</th>
+                            <th scope="col">Edit</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                                <% for(var k=0;k <student.length;k++){%>
+                                    <tr>
+                                     <th><%= student[k].StudentId%></th>
+                                    <th><%= student[k].Name%></th>
+                                    <th><%= student[k].Qualification%></th>
+                                    <th><%= student[k].College%></th>
+                                    <th><%= student[k].Gender%></th>
+                                    <th><%= student[k].Idea%></th>
+                                    <th><%= student[k].EstBudget%></th>
+                                    <th><a href='/delete/<%=student[k]._id%>'>delete</a></th>
+                                    <th><a href='/edit/<%=student[k]._id%>'>Edit</a></th>
+                                    <% } %>
+                    </tr> 
+                </tbody>
+            </table>
+            <script>
+                $(document).ready(function () {
+                    $('#table').DataTable();
+                });
+                
+            </script>
+        </form>
+    </div>
+</body>
+</html>
